@@ -91,10 +91,10 @@ terraform/
 ## Variables
 The following variables are defined in root dir's variables.tf and can be customized in terraform.tfvars:
 
-| Variable | Description	Default Value |
+| Variable | Description |
 | ----------- | ----------- |
-|aws_region	|AWS region for resources	us-east-1|
-|instance_type	|EC2 instance type for web servers	t2.micro|
+|aws_region	|AWS region for resources|
+|instance_type	|EC2 instance type for web servers|
 |db_username	|Database username |
 |db_password	|Database password |
 |backend_bucket	|S3 bucket for remote state storage	(Required)|
