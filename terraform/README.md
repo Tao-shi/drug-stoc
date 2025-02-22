@@ -68,8 +68,8 @@ terraform/
         ├── variables.tf
         └── outputs.tf
 
-| Variable | Description |
-| ----------- | ----------- |
+| Variable | 
+| ----------- |
 ||terraform/|
 |├── main.tf|
 |├── variables.tf|
