@@ -68,6 +68,33 @@ terraform/
         ├── variables.tf
         └── outputs.tf
 
+| Variable | Description |
+| ----------- | ----------- |
+||terraform/|
+|├── main.tf|
+|├── variables.tf|
+|├── outputs.tf|
+|├── terraform.tfvars|
+|└── modules/|
+|    ├── load_balancer/|
+|    │   ├── main.tf|
+|    │   ├── variables.tf|
+|    │   └── outputs.tf|
+|    ├── web_server/|
+|    │   ├── main.tf|
+|    │   ├── variables.tf|
+|    │   └── outputs.tf|
+|    ├── database/|
+|    │   ├── main.tf|
+|    │   ├── variables.tf|
+|    │   └── outputs.tf|
+|    └── security_group/|
+|        ├── main.tf|
+|        ├── variables.tf|
+|        └── outputs.tf|
+
+
+
 
 ## Setup Instructions
 
