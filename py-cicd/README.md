@@ -2,7 +2,7 @@
 
 This pipeline automates the build, test, and deployment of a simple Flask app. It includes stages for workspace cleanup, environment setup, linting, unit testing, Docker image creation, pushing the image to Docker Hub, and deploying to Kubernetes.
 
---- 
+ 
 
 ## Pipeline Stages
 
@@ -15,7 +15,7 @@ This pipeline automates the build, test, and deployment of a simple Flask app. I
 7. Push Docker Image: Pushes the Docker image to Docker Hub.
 8. Deploy to Kubernetes: Updates the Kubernetes deployment with the new image.
 
----
+
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Installed with the following plugins:
 - Dockerfile
 - Unit tests in the tests/ directory.
 
----
+
 
 ## How to Use
 
@@ -61,7 +61,7 @@ Installed with the following plugins:
 3.  Monitor Progress:
 - Check the Jenkins UI for pipeline status and logs.
 
----
+
 
 ## Customization
 
