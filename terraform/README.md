@@ -45,28 +45,28 @@ Before using this Terraform project, ensure you have the following:
 
 ## Direcroy Structure
 
->terraform/
->├── main.tf
->├── variables.tf
->├── outputs.tf
->├── terraform.tfvars
->└── modules/
->    ├── load_balancer/
->    │   ├── main.tf
->    │   ├── variables.tf
->    │   └── outputs.tf
->    ├── web_server/
->    │   ├── main.tf
->    │   ├── variables.tf
->    │   └── outputs.tf
->    ├── database/
->    │   ├── main.tf
->    │   ├── variables.tf
->    │   └── outputs.tf
->    └── security_group/
->        ├── main.tf
->        ├── variables.tf
->        └── outputs.tf
+terraform/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+└── modules/
+    ├── load_balancer/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── outputs.tf
+    ├── web_server/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── outputs.tf
+    ├── database/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── outputs.tf
+    └── security_group/
+        ├── main.tf
+        ├── variables.tf
+        └── outputs.tf
 
 
 ## Setup Instructions
@@ -91,13 +91,13 @@ Before using this Terraform project, ensure you have the following:
 ## Variables
 The following variables are defined in root dir's variables.tf and can be customized in terraform.tfvars:
 
-| Syntax | Description |
+| Variable | Description	Default Value |
 | ----------- | ----------- |
-|Variable	|Description	Default Value|
+<!-- |Variable	|Description	Default Value| -->
 |aws_region	|AWS region for resources	us-east-1|
 |instance_type	|EC2 instance type for web servers	t2.micro|
-|db_username	|Database username|
-|db_password	|Database password|
+|db_username	|Database username |
+|db_password	|Database password |
 |backend_bucket	|S3 bucket for remote state storage	(Required)|
 |backend_key	|Path to state file in S3 bucket	(Required)|
 |backend_region	|AWS region for S3 bucket	(Required)|
