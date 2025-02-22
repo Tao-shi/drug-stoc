@@ -25,11 +25,12 @@ This Python script monitors system resources (CPU, memory, and disk usage) and t
 ### 4. Slack Notifications:
 
 - Sends formatted Slack messages with alerts for:
-
+```
 ** High CPU usage.
 ** High memory usage.
 ** High disk usage.
 ** Service restarts.
+```
 
 ## Prerequisites
 
