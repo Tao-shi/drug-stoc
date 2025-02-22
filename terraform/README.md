@@ -93,7 +93,6 @@ The following variables are defined in root dir's variables.tf and can be custom
 
 | Variable | Description	Default Value |
 | ----------- | ----------- |
-<!-- |Variable	|Description	Default Value| -->
 |aws_region	|AWS region for resources	us-east-1|
 |instance_type	|EC2 instance type for web servers	t2.micro|
 |db_username	|Database username |
