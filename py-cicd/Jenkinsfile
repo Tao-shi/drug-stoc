@@ -1,0 +1,79 @@
+pipeline {
+    agent any // Provide agent
+
+    environment {
+        DOCKER_IMAGE = "taofiq7/flask-cicd:$BUILD_ID"
+        DOCKER_USER = "taofiq7"
+        REPO_URL = "https://github.com/Tao-shi/drug-app-py.git"
+        DEPLOYMENT_NAME = "nginx" // Specify deployment
+        CONTAINER_NAME = "nginx" // specify deployment container name
+    }
+    
+
+    stages {
+        
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Tao-shi/drug-app-py.git']])
+                sh 'ls -a'
+            }
+        }        
+        
+        stage('Env setup') {
+            steps {
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Lint') {
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    flake8 .
+                '''
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                sh '''
+                    . venv/bin/activate
+                    python -m pytest tests/
+                '''
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t $DOCKER_IMAGE .'
+            }
+        }
+        
+        
+        stage('Push Docker Image') {
+            steps {
+                    sh 'echo $DOCKER_TOKEN | docker login -u $DOCKER_USER --password-stdin'
+                    sh 'docker push $DOCKER_IMAGE'
+                }
+            }
+                
+        stage('Deploy to Kubernetes') {
+            steps {
+                    sh 'kubectl set image deployment/$DEPLOYMENT_NAME $CONTAINER_NAME=$DOCKER_IMAGE'
+            }
+        }
+    
+    }
+
+}
