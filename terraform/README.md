@@ -45,6 +45,7 @@ Before using this Terraform project, ensure you have the following:
 
 ## Direcroy Structure
 
+```
 terraform/
 ├── main.tf
 ├── variables.tf
@@ -67,32 +68,7 @@ terraform/
         ├── main.tf
         ├── variables.tf
         └── outputs.tf
-
-| Variable | 
-| ----------- |
-||terraform/|
-|├── main.tf|
-|├── variables.tf|
-|├── outputs.tf|
-|├── terraform.tfvars|
-|└── modules/|
-|    ├── load_balancer/|
-|    │   ├── main.tf|
-|    │   ├── variables.tf|
-|    │   └── outputs.tf|
-|    ├── web_server/|
-|    │   ├── main.tf|
-|    │   ├── variables.tf|
-|    │   └── outputs.tf|
-|    ├── database/|
-|    │   ├── main.tf|
-|    │   ├── variables.tf|
-|    │   └── outputs.tf|
-|    └── security_group/|
-|        ├── main.tf|
-|        ├── variables.tf|
-|        └── outputs.tf|
-
+```
 
 
 
